@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: SCW-ORDER
+  datasource:
+    username: root
+    password: administrator
+    url: jdbc:mysql://localhost:3306/crowdfunding?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    filters: stat
+  redis:
+    host: 7.95.140.186
+    port: 6379
+    #password: 123456
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+ 
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+ 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    appname: SCW-ORDER
+    prefer-ip-address: true
+ 
+server:
+  port: 9000
+  
+swagger2: 
+  enable: true
+  
+feign:
+  hystrix:
+    enabled: true 

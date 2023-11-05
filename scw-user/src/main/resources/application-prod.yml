@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: SCW-USER
+  datasource:
+    username: root
+    password: administrator
+    url: jdbc:mysql://localhost:3306/crowdfunding?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 47.95.140.186
+    port: 6379
+    #password: 123456
+    
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.95.140.186:8761/eureka/
+  instance:
+    appname: SCW-USER
+    prefer-ip-address: true
+    
+server:
+  port: 7000
+  
+swagger2: 
+  enable: true
+  
+sms: 
+  host: http://dingxin.market.alicloudapi.com
+  path: /dx/sendSms
+  method: POST
+  appcode: 42c2ebd07c7c4a95b270feff6c896c6c
